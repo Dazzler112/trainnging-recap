@@ -1,0 +1,20 @@
+h1 {
+    color: tomato;
+    background-color: darkgoldenrod;
+}
+
+
+/* h1,h2,h3{
+    color : red;
+    background-color: bliu;
+}
+이런 형식으로 그룹해서 수정도 가능 그리고 다른 셀렉터에 추가 규칙을 설정하려고 하면 할수있음
+h1{
+    color :gold;
+} 이런식 
+*/
+
+/* *{
+    color:white;
+    background-color:black
+} *표셀렉터는 모든 셀렉터들 다 css 수정 가능하게 함 */
