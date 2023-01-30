@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #head1{
+            color: blueviolet;
+        }
+        #yourhead{
+            background-color:coral;
+        }
+        #yourHead {
+            text-decoration: line-through;
+        }
+
+        .todo{
+            color:cyan;
+        }
+        .error {
+            background-color: darkgray;
+        }
+        .note {
+            text-decoration: underline;
+        }
+    /*선택자 띄워쓰기 없이 연속작성 */
+    /* 모든 조건 만족하는 요소 선택 */
+    /* 구체적으로 (특정지어서) 선택 할 수록 우선순위가 높다  specificity*/
+    /* element selector 1점 class 10점 id 100점 */
+        p.good {
+            background-color: aqua;
+        }
+        p.bad{
+            text-decoration: underline;
+        }
+        p.bad.good {
+            border:3px solid;
+        }
+        .good.bad {
+            border:8px dotted rgb(200,100,100);
+        }
+        h1.bad{
+            text-align: right;
+        }
+
+        /*  >은? : 자식선택자 */
+        /* 부모요소가 list클래스인 li요소들 정렬 오른쪽 */
+        .list>li {
+            text-align: right;
+        }
+
+        /* 자식선택자 */
+        .sub > h1 {
+            color:yellow;
+        }
+        /* 자손선택자 */
+        /* 셀렉터 나 id class 뒤에 띄어쓰기 한번(여러번 상관없음)하고 자손셀렉터 입력시 사용가능 */
+        .container h1{
+            border:4px solid rgba(30,110,150);
+        }
+
+        /* 인접형제선택자 */
+        h1 + p {
+            background-color: gold;
+            color: dodgerblue;
+        }
+        /* 속성선택자 */
+        /* title for 등등 속성 붙어있는 요소에 사용가능 */
+        [title] {
+            color:red;
+        }
+        [title = hello]{
+            background-color: cyan;
+        }
+        [title ="world"] { /*따옴표 붙혀도 사용 가능*/
+            background-color: deeppink;
+        }
+        /* 상속 */
+        /* h1은 부모요소인 div로 부터 색상 상속을 받음 but border속성은 상속 받지 못한다 */
+        /* 자세한 상속 확인은 w3s나 mdn에 요소 검색해서 inherit 가능한 요소인지 확인해 봐야함  */
+        div{
+            border: 7px solid;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 고유id 부여하여 css로 색상 위치 크기등 조정가능 -->
+    <!-- 단 규칙 숫자로시작X, 빈칸(스페이스바)넣기 불가능, 특수문자-,_만 사용가능, 대소문자 구분함, 한페이지에 같은 id 사용 불가 -->
+    <h1 id="head1">Lorem, ipsum dolor.</h1>
+    <h1 id="yourhead">Voluptas, nihil delectus!</h1>
+    <h1 id="yourHead">Placeat, totam temporibus?</h1>
+
+    <!-- 아래 코드들은 id사용 불가 -->
+    <!-- 숫자로 시작함 -->
+    <p1 id="1head">Lorem, ipsum.</p1>
+    <!-- 아래 두개 id가 같음 -->
+    <p1 id="yourhead">Itaque, dolor.</p1>
+    <p1 id="yeourhead">Harum, sapiente.</p1>
+    <!-- 띄어쓰기 사용 -->
+    <p1 id="your head">Lorem ipsum dolor sit amet.</p1>
+
+    <!-- class속성 또한 영문 숫자 -,_조합으로 작성 id와는 다르게 중복가능(그룹화 같은 개념이기 때문)-->
+    <h1 class="todo">Lorem, ipsum.</h1>
+    <h1 class="error">Tempore, consectetur!</h1>
+    <h1 class="note">Lorem, ipsum dolor.</h1>
+    <h1 class="note">Tempora, perspiciatis!</h1>
+    <!-- 하나의 요소는 빈칸으로 구분 가능 -->
+    <p class="note todo">Lorem ipsum dolor sit amet.</p>
+    <p class="note todo">Voluptates laborum dolores ullam adipisci?</p>
+    <p class="note error">Praesentium numquam doloribus saepe sequi.</p>
+
+    <!--  -->
+    <h1 class="good">Lorem, ipsum.</h1>
+    <h1 class="good">Quo, vitae?</h1>
+    <h1 class="good bad">Est, culpa.</h1>
+    <p class="good">Lorem ipsum dolor sit.</p>
+    <p class="good bad">Hic odit impedit ratione!</p>
+    <p class="good bad">Facere quos culpa optio.</p>
+
+    <!-- 자식선택자 -->
+    <ul class="list">
+        <li>Lorem, ipsum.</li>
+        <li>Facilis, aliquid.</li>
+        <li>Deleniti, ullam!</li>
+    </ul>
+    <!-- 자손 선택자 -->
+    <div class="container">
+        <h1>Lorem ipsum dolor sit.</h1>
+        <div class="sub">
+        <h1>Lorem, ipsum.</h1>
+    </div>
+    </div>
+
+    <!-- div 콘텐츠 나눌때 사용하는 요소(container) -->
+    <!-- 브라우저 기본스타일이 없다 emmet에서 태그명 생략하면 div -->
+    <div class="head1"></div>
+
+    <!-- 인접형제선택자 -->
+    <h1>Lorem ipsum dolor sit amet.</h1>
+<!-- css에 h1+p 하면 선택됨--><p>Lorem ipsum dolor sit amet consectetur.</p>
+    <h1>Lorem, ipsum.</h1>
+<!-- css에 h1+p 하면 선택됨--><p>Lorem, ipsum dolor.</p>
+
+    <!-- (arrtibute-selector)속성 선택자 -->
+    <h1 title="hello">Lorem, ipsum.</h1>
+    <h1 title="world">Pariatur, nihil.</h1>
+    <h1>Molestias, reiciendis?</h1>
+    <h1>Quis, quae.</h1>
+
+    <!-- inherit 상속 -->
+    <!-- h1은 부모요소인 div로 부터 색상 상속을 받음 but border속성은 상속 받지 못한다 -->
+    <!-- 자세한 상속 확인은 w3s나 mdn에 요소 검색해서 inherit 가능한 요소인지 확인해 봐야함 -->
+    <div>
+        Lorem.
+        <h1></h1>
+        Lorem, ipsum dolor. 
+    </div>
+</body>
+</html>
