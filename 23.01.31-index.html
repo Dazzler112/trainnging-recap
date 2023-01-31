@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* border에 관한 설명 */
+        /* border x x x  순서대로 두깨 모양 색 */
+        #head1 {
+            border:5px solid blue;
+        }
+        #head2 {
+            /* 이렇게 따로 따로 써줄수도 있지만 갠적으로 비추 */
+            border-width: 10px; /* border의 두꺠*/
+            border-style: double; /* border의 모양*/
+            border-color: bisque; /* border의 색상*/
+        } 
+        #head3 {
+            /* 방향마다 다르게 할수도 있음 x x x x  보통 시계방향(상우하좌)순서 */
+            border-style:dashed double dotted solid ;
+            /* 상 좌우 하 
+            border-style: solid double dotted; */
+             /* 상하 좌우 
+             border-style: solid dotted;*/ /* 상하좌우 border-style: dashed;*/
+             /* width 나 color 도 위와 비슷 width 예) /* 상 우 하 좌 시계방향  border-width: 5px 10px 7px 20px; */
+            /* color 예)  /* 상 우 하 좌 border-color: red violet blue beige;*/ 
+        }
+        /* margin의 대한 설명 */
+        /* margin이란? border밖의 공간에 얼만큼 공간을 주는가 설정 */
+        div {
+            border: 5px solid black;
+        }
+        #head1 {
+            /* 마찬가지로 이렇게 개별적으로 줄수 있지만 비추함 한번에 쓰는게 좋음 */
+            /* 한번에 쑬때 마찬가지로 x x x x 시계방향(위 우 아 좌)순서 */
+            margin-top: 7px;
+            margin-right: 15px;
+            margin-bottom: 20px;
+            margin-left: 30px;
+        }
+        #head2 {
+            /* 이렇게 한번에 쓰는 방식이 선호됨 */
+            margin:10px 20px 15px 7px;
+        }
+        #head3 {
+            /* 위 우좌 하 */
+            margin:10px 20px 30px;
+        }
+        #head4 {
+            text-align: center;
+            width: 100px;
+            height: 200px;
+            /* auto는 세로축은 움직이는대 브라우저 크기 늘였다 줄였다 해도
+            가로축만 가운데로 자동으로 왔다갔다 하게 하는 설정 */
+            margin: auto;
+        }
+        /* padding 에대한 설명 */
+        /* padding이란? border 안쪽에 공간 설정할수 있는 요소 */
+        /* 활동 반경만 다르고 margin과 설명이 거의 비슷하기 때문에 많이 생략 */
+        #box1{
+            /* 마찬가지로 따로 따로 설정 가능함 */
+            padding-top:10px;
+            padding-right:20px;
+            padding-bottom: 8px;
+            padding-left: 50px;
+        }
+        #box2 {
+            /* 상 우 하 좌 순서 */
+            padding:10px 20px 40px 7px;
+        }
+        /* width heigft */
+        #box3 {
+            width: 100px;
+            height: 50px;
+        }
+        #box4{
+            /* viwport width 기준 */
+            width: 50vw;
+            /* viewport height기준 */
+            height: 100vh;
+        }
+        #box5 {
+            /* 부모요소 기준 */
+            width:50%;
+            height: 50%;
+            /* 누가 잘 안쓰는 단위 사용했다? css unit 단위(vs cm 등등)
+            검색해서 변환 단위 찾아보기 */
+        }
+        #box6 {
+            background-color: blue;
+            padding: 10px;
+            margin: 20px;
+            border:10px solid tomato;
+            height: 100px;
+            width: 50vw;
+            /* width, height가 border영역까지 설정 */
+            /* 화면의 50%까지만 표시하고 싶은대 마진 패딩 등의 이유로 50%
+            초과하는 경우가 많음 그럴때 box-sizing:border-box 사용시 가로50%가출력됨
+            단 세로길이가 적었던표시보다 적음 패딩 위아래 마진 위아래 뺀값을 height에
+            다시 더해서 수정해야 함 */
+            box-sizing: border-box;
+        }
+
+        /* block을 인라인 인라인을 블락으로 */
+        .block {
+            display: inline;
+        }
+        .href {
+            display: block;
+        }
+        /* 하지만 inline은 width height padding margin을 예상하기 힘듬 */
+        /* 그래서 개발자가 원하는대로 같은줄에 배치하고 싶을때 disply:inline-block */
+        .inline-block1 {
+            background-color: gold;
+            border: 5px solid aquamarine;
+            width: 150px;
+            height: 70px;
+            padding: 10px;
+            margin: 15px;
+            display: inline-block;
+        }
+        /* inline-block 단점은 div 사이 사이 공간이 생김 엔터 칠때 마다 공간 1칸씩 생김
+        그렇다고 붙혀주면 코드가 보기에 않좋음 그래서 생긴게 flex*/
+        .flex1{
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            background-color: lightcoral;
+            width: 30px;
+            height: 80px;
+            padding: 8px;
+            max-width: 12px;
+        }
+        .flex1:nth-child(odd) {
+            background-color: mediumpurple;
+        }
+        .fflex {
+            background-color: hotpink;
+            display: flex;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="box1">Lorem.</h1>
+    <h1 id="box2">Numquam.</h1>
+    <h1 id="box3">Distinctio.</h1>
+
+    <div id="head1">Lorem, ipsum.</div>
+    <div id="head2">Voluptates, cumque!</div>
+    <div id="head3">Autem, similique?</div>
+    <div id="head4">Ullam, expedita!</div>
+
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+    <div id="box4">box4</div>
+    <div id="box5">box5</div>
+    <div id="box6">box6</div>
+
+    <!-- block요소 -->
+    <!-- 가장 넓은 너비를 갖음 -->
+    <!-- 새로운 줄에 배치됨 -->
+    <!-- 대표적인 block요소들 -->
+    <h1>Lorem, ipsum.</h1>
+    <p>Lorem, ipsum dolor.</p>
+    <div>Lorem ipsum dolor sit amet.</div>
+
+<hr>
+    <!-- inline요소 -->
+    <!-- 필요한 만큼의 너비만 갖음 -->
+    <!-- 같은 줄에 배치됨 -->
+    <!-- 대표적인 inline 요소들 -->
+    <span>Lorem ipsum dolor sit.</span>
+    <a href="https://www.naver.com">네이버로 이동</a>
+    <img src="">
+
+    <!-- block요소를 inline으로 inline을 block으로 변경 가능 css로 -->
+    <h1 class="block">Lorem, ipsum dolor.</h1>
+    <a href="https://www.naver.com" class="href">Lorem.</a>
+
+    <!-- inline-block -->
+    <div class="inline-block1">box1</div>
+    <div class="inline-block1">box2</div>
+
+    <!-- display: flex -->
+    <div class="fflex">
+    <div class="flex1">box1</div>
+    <div class="flex1">box2</div>
+    </div>
+</body>
+</html>
