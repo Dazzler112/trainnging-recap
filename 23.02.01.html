@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* flex box 설명 */
+        .container1{
+            display: flex;
+            background-color: black;
+            /* justify-content는 메인축 기준으로 아이템을 어떻게
+                배치할 것인가? */
+            justify-content: space-between;
+        }
+        .item {
+            color: white;
+            font-weight: 600;
+            font-size: 22px;
+            background-color: black;
+        }
+        /*  */
+        .child {
+            font-size: 28px;
+            background-color: skyblue;
+        }
+        .child:nth-child(odd){
+            background-color: gold;
+        }
+        .box {
+            background-color: brown;
+            display: flex;
+            height: 200px;
+            /*allign-item은 
+            flex item들이 크로스축 기준으로 어떻게 배치되어야 하는가? */
+            align-items: center;
+        }
+        /*  flex-grow 및 flex-basis  */
+        .item1 {
+            background-color: aquamarine;
+        }
+        .item1:nth-child(odd) {
+            background-color: gold;
+        }
+        .container2 {
+            display: flex;
+            background-color: chocolate;
+        }
+        #it1 {  
+        /* container 남은공간을 얼마나 차지할것인가? */
+        /* 결정하는 코드 현재 너비에서 시작 */
+        /* flex grow는 숫자가 클수록 먹는대비가 더커짐 
+        혼자 1이면 혼자 남은구역 다먹겠다는 뜻 */
+            flex-grow: 1;
+            width: 30px;
+            flex-basis: 0;
+            /* 남은공간을 차지하기 전 시작할 너비 */
+            flex-basis: 0;
+        }
+        #it2 {
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+        #it3 {
+            /* flex:1; 은 flex-grow:1; flex-basis:0; 값하고 같다 */
+            flex: 1;
+        }
+        /* container margin */
+        .item2 {
+            background-color: dodgerblue;
+        }
+        .item:nth-child(even) {
+            background-color: yellowgreen;
+        }
+        .container3 {
+            display: flex;
+            background-color: brown;
+        }
+        .item2 {
+            margin-right: 10px;
+        }
+        .item:nth-child(2) {
+            /* margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto; 
+            이런식으로 원하는 비어있는 방향으로 끝까지 밀수 있음
+            아무것도 없으면 가운데로 정렬도 가능 */
+            margin-right: auto;
+        }
+        /* peseudo class */
+        .p1 {
+            background-color: black;
+            color: white;
+            /* transition : 1s background-color ease-in-out */
+        }
+        /* peseudo-class selector */
+        /* 요소의 상태를 나타내는 선택자 */
+        /* :hover 마우스가 요소 위에 있는 상자 */
+        /* trasition 과 같이 써주면 더 부드러운 느낌으로 보기가 좋다 */
+        .p1:hover {
+            background-color: pink;
+            color: darkgreen;
+        }
+        /* 다른 horver예제 */
+        .p2 {
+            display: none;
+        }
+        .h1:hover + .p1 {
+            /* 이런식으로 안보이게 헀다가 올려놓으면
+            다시 원래 display 설정등으로 나오게도 가능 */
+            display:block;
+        }
+        /* checked peseudo  */
+        .check:checked {
+            /* checked 되면 크기등을 바꿀수 있음
+            별로 유용해 보이진 않음 */
+            height: 20px;
+            width: 20px;
+        }
+        /* focus peseudo */
+        .focuson:focus {
+            /* 인풋등에 활용 클릭하면 색상이 생기거나 변함 */
+            background-color: gold;
+        }
+        /* .focuson {
+            transition: 0.5s background-color ease-in-out;
+        }  이것도 transition 사용시 굉장히 부드럽게 활용할 수 있음*/
+    </style>
+</head>
+<body>
+    <!-- flexbox -->
+    <!-- 감싸고 있는 요소 :flex container 
+        flex container의 자식요소들 flex item-->
+    <div class="container1">
+        <div class="item">HTML</div>
+        <div class="item">CSS</div>
+        <div class="item">JAVASCRIPT</div>
+        <div class="item">JAVA</div>
+    </div>
+<!-- allign-item -->
+    <div class="box">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+    </div>
+<!-- flex-grow 및 flex-basis -->
+    <div class="container2">
+        <div class="item1" id="it1">1</div>
+        <div class="item1" id="it2">2</div>
+        <div class="item1" id="it3">3</div>
+    </div>
+    <!-- container margin -->
+    <div class="container3">
+        <div class="item2">
+            Lorem.
+        </div>
+        <div class="item2">
+            Delectus?
+        </div>
+        <div class="item2">
+            Sapiente.
+        </div>
+    </div>
+    <!-- peseudo class-->
+    <h1 class="p1">Lorem.</h1>
+    <!-- 다른 hover예제 -->
+    <h1 class="h1">Lorem, ipsum.</h1>
+    <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsa temporibus nostrum totam est impedit labore molestias nulla explicabo? Iste repellat quam nobis consectetur fuga, veritatis sapiente eaque voluptas sint.</p>
+    <!-- checked peseudo -->
+    <input type="checkbox" class="check">
+    <input type="checkbox" class="check">
+    <hr>
+    <input type="radio" class="check">
+    <input type="radio" class="check">
+    <!-- focus -->
+    <input type="text" class="focuson">
+    <br>
+    <input type="text" class="focuson">
+</body>
+</html>
