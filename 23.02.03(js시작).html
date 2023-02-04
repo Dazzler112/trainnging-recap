@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        //자바스크립트 주석
+    // 한줄 주석
+    /*
+    여러줄 주석 역시 확인 가능하니 중요정보 작성 금지!
+    */
+
+   //로그출력
+   console.log("어떤 정보 출력!") //tip log타이핑후 ㅁlog 클릭하면 console.log()가 자동 타이핑
+   
+   //statement(명령문) js는 명령문들로 구성되어 있음
+   //변수 값 연산자 식 키워드 등으로구성 대부분 끝낼때 뒷부분;로 끝냄(;생략가능)
+    //순서대로 실행됨
+    console.log("실행문");
+    console.log("세미콜론 생략 가능");
+        document.getElementById("demo").innerHTML = "Hello World!";
+        //하나의 명령문은 여러줄로 작성 될 수 있음 //순서대로 실행됨
+        //연산자 앞에서 엔터 입력
+        document.getElementById("demo").innerHTML = "Hello Javascript";
+
+        //변수 (variable) : 값을 저장한 식별자(id)
+        //var(키워드) a(식별자)
+        var a; //a라는 이름의 변수 선언
+        // = : 대입(할당) 연산자 (assignment)
+        //오른쪽에 있는 값을 왼쪽에 대입 (할당,assigin)
+        a = 3;
+        console.log(a);
+        a = 2.15;
+        console.log(a);
+        a = "hello!"
+        console.log(a);
+        //let : 변수 선언시 사용하는 키워드
+        let b; 
+        let c;
+        b = 50;
+        b = 75;
+        c = 22;
+        c = 99;
+        //변수 선언과 값 할당을 하나의 명령문으로 작성
+        let e = 90;
+        let f = 182;
+        console.log(e);
+        console.log(f); 
+        //constant(상수) : 값이 변하지 않는 식별자
+        const g = 5;
+            // b = 6; 타이핑시 오류 why? 상수(값이 변하지 않기 때문)
+        h = 24; //선언없이 사용 가능하지만 사용하지 말것! 나중에 코드 해석이 어려워질수가 있음
+        /*변수 작성 규칙
+        영문대소문자, 숫자, _, $의 조합으로 사용가능*/
+        const $ = 3;
+        console.log($);
+        let _ = 20;
+        console.log(_);
+        let hello_ = "greeting";
+        console.log(hello_);
+        let HELLO = "hola";
+        console.log(HELLO);
+        //lowerCamelCase : 소문자시작 여러단어가 조합될 경우 두번째 이후 단어 앞글자만 대문자
+        let car_name = "kia"
+        console.log(car_name)//하면 작동이 안되는건 아니지만 관습에 어긋남
+        let carName = "hyundai"
+        console.log(carName);//관습에 따름
+        //js 자료형은 총 8개
+        //boolean, null, undefined, nuber, bright, srting, symbol, object
+        let i = 5; //number 3.14 소수도 포함
+        let j = "javascript" //string(문자열)
+        let k = true //boolean(논리형)
+        let l = false
+        let m = {}; //object
+        let o; //undefined 
+        //표현 가능 범위 (-2^53(2의53승 -1)-1 ~ 2^53 -1 = 9007199254740991)
+        let p = 1 / 0;//계산이 영원히 안끝나는 방식은 infinity로 표현
+        let q = 15 % 0//NAN 
+        console.log(q);//%는 나눈 첫번째 나머지 값 구하는 타입
+    </script>
+</body>
+</html>

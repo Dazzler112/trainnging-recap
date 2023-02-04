@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    </style>
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    //string(문자열)
+    let a = "hello";//큰따옴표 표현
+    let b = "hello";//작은 따옴표 표현
+
+    let c = "I'm ironman"; //큰따옴표 내에 작은 따옴표 작성 가능
+    let d = 'I am "ironman"'//작은따옴표 내에 큰따옴표 사용 가능
+
+    let e = "I am \"ironman\"";// \로 특수문자 작성 가능
+    let f = 'I am \'ironman\'';
+
+    let g = "I am \tironman" //  \t탭
+    console.log(g);
+    let h ="I am \nironman"; //   \n 새로운줄
+
+    let j = "abd\\nef"; // 역슬래쉬 표현하고 싶을때 \\<==역슬래쉬 2개타이핑
+    console.log(j);
+    let k = `hello`; //template literal(``)
+    //", ' 을 바로 사용 가능
+    let l = `hello "my" 'world'` //새로운 줄을 escape character(\) 없이 사용 가능
+    let m = `hello  
+world`;//백틱은 \n 없이 엔터로 바로 다음줄 사용 가능
+    let n = 20;
+    let o = 99;
+    let p = `${n}와 ${o}를 더한 값은 ${n + o}`;//문자열 내에 변수(variable) 식(expression)사용 가능
+    console.log(p)
+    let q = undefined; //undefinded 값이 없음
+    console.log(q);
+    let r = null //null 객체가 없음
+    console.log(r);
+
+    //objecj : 여러값(속성property)를 갖는 data type
+    let name = "jhon" //하나의 값
+    let age = 30;//하나의 값
+    //s객체는 name 속성과 ,age속성을 갖는다
+    let s ={name:"jane", age:40};//여러값
+    console.log(nemr);//jhon
+    log(age)//30
+    console.log(s.name);
+    console.log(s.age)
+    name = "donald";
+    console.log(name);//donald
+    a.name = "trump";
+    console.log(a.name)//trump
+
+    a.address = "seoul" //추가해주면 추가됨
+    console.log(a.address);
+    console.log(a.birth)//undefined(추가 하지 않았기 때문)
+    </script>
+</body>
+</html>
