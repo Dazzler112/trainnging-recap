@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    </style>
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    //비교연산자 
+    //두항을 비교한 결과(Boolean)
+    // ==,===(타입까지 같은가?), !=, !== , <, <=, >, >=
+    //== : 값이 같은가?
+    //결과 : 값이같으면 (true), 값이 다르면 (false);
+    let a = 2;
+    let b = 7;
+    let c = a==b //false
+    console.log(c);//false
+
+    let d = a == 2; //true
+    console.log(d); //true
+
+    let e = "java";
+    let f = "javascript";
+    console.log(e == f); //false
+    console.log(e == "java"); //true //"", '', `` 상관없이 문자열 내용만 같으면 true
+    
+    let g = 22;
+    let h ="22";
+    console.log(g == h);//true (값만 비교하고 타입은 비교하지 않기 때문)
+
+    // === : 값과 타입이 같으면 true, 그렇지 않으면 false
+    console.log(g === h);//false (값과 타입 비교)
+                        //tip 회사에선 ==잘 쓰지 않는다 왜냐? 값은 맞는대 타입이 틀릴수 있기 때문에
+    
+    // != : 값이 같지 않으면 true, 그렇지 않으면 false
+    let i =3;
+    let j =5;
+    console.log(i != j);// true
+    console.log(i !== "3");//false
+    
+    // !== : 값이 같지 않거나 타입이 같지 않으면 true
+    console.log(i !== j); //true
+    console.log(i !== "3");//true
+    console.log(i !== 3);//false
+    // < : 왼쪽항이 작으면 true
+    let k = 5;
+    console.log(k < 6);//true
+    console.log(k < 5);//false
+    console.log(k < 4);//false
+    //<=: 왼쪽항이 작거나 같으면 true 
+    console.log(k <= 6); //true
+    console.log(k <= 5);//true
+    console.log(k <= 4); //false
+
+    //> : 왼쪽항이 크면 true
+    console.log(k > 6);//false
+    console.log(k > 5);//false
+    console.log(k > 4);//true
+    // >= : 왼쪽항이 크거나 같으면 true
+    console.log(k >= 6);//false
+    console.log(k >= 5);//true
+    console.log(k >= 4);// ture
+    // if
+    console.log("ex1");
+    console.log("ex2");
+    console.log("ex3");
+    if (true){
+        //code block (중괄호 감싸지는 부분)
+        console.log("실행되거나 안되는 명령문들");
+    }//true면 출력 되고 false면 출력안되고 ex4로
+    console.log("ex4");
+    //if-else 
+    console.log("예1");
+    console.log("예2");
+    if(true){
+        //if의 조건이 true일때 실행됨
+        console.log("true일때 실행");
+    }else{
+        console.log("false일 때 실행");
+    }
+    console.log("예3");
+
+    //else if : 이전 조건이 false일 경우 다른 조건 확인
+    if(true){
+        console.log("h1");//true면 2번넘어가고 false면 2부터시작
+    }else if(true)//둘다 false이면 둘다 넘어가서 3번부터
+    {
+        console.log("h2");
+    }
+    console.log("h3");
+    console.log("h4");
+    console.log("h5");
+    //Math.random()
+    //0 <= Math.random() <1 의 수를 임의로 리턴함
+    //ParseInt()
+    //정수(소숫점 아닌수)로 변환함
+    let l = Math.random();
+    console.log(l); //0.0 <= a <1.0
+
+    l *= 100;
+    console.log(l); //0.0 <= a < 100.0
+
+    l = parseInt(l);
+    console.log(l);// 0<= l < 100 ----> 0<= l <= 99
+
+    l += 1;
+    console.log(l); //1<= l <=100
+
+    //논리 연산자 (logical)
+    // &&,||,!
+
+    //&&(and, 논리곱) : 두개의 항이 모두 true이면 결과가 true 나머지는 false
+    //피연산자의 type은 boolean
+    console.log(true && true);//true
+    console.log(true && false);//false
+    console.log(false && true);//false
+    console.log(false && false);//false
+
+    // || (or, 논리합) : 두개의 항이 모두 false이면 결과가 false, 나머지는 true
+    //피연산자의 type은 boolean
+    console.log(true || true);//true
+    console.log(true || false);// true
+    console.log(false || true); //true
+    console.log(false || false);//false
+    // ! (not) : 피연산자가 하나(bollean), 결과는 피연산자의 반대
+    console.log(!true); //false
+    console.log(!false);//true
+
+    let m = 6;
+    let n = 3;
+    console.log((m < 10 ) && (n > 1));//true
+    console.log((m === 5) || (n === 5))//false
+    console.log(!(m === n));//true
+
+    //falsy (거짓 같은것, false로 취급되는 값)
+    //0, "", null, undefined, NaN
+
+    //truthy (참 같은 값, true로 취급되는 값)
+    //위의 falsy 값외의 모든값
+
+    let o = 0;
+    if(o) {
+        console.log("o는 참");
+    }else {
+        console.log("o는 거짓");
+    }
+
+    let p = 1;
+    if (p){
+        console.log("p는 참");
+    }else {
+        console.log("p는 거짓");
+    }
+    let q = "";
+    if (q){
+        console.log("q는 참");
+    }else{
+        console.log("q는 거짓");
+    }
+    let r = "hello";
+    if(r){
+        console.log("r는 참");
+    }else{
+        console.log("r는 거짓");
+    }
+
+    let s = " "; //안의 띄어쓰기도 truthy임
+    if(s) {
+        console.log("s는 참");
+    }else{
+        console.log("s는 거짓");
+    }
+    </script>
+</body>
+</html>
