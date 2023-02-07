@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    </style>
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    //조건연산, 삼항(ternary)연산, 물음표연산 (3개 언어로 불림)
+    // 1항? 2항: 3항 결과문 2항 아니면 3항
+    //결과는 1항이 ture이면 2항이, 1항이 false이면 3항
+     //true ? 99 : 88   답=>//99
+    console.log(true ? 99 : 88);//99
+    console.log(false ? 77 : 100);//100
+
+    //conditional, branch : if, switch
+    //(조건문, 분기문 으로 번역)
+    //switch 문, switch-case
+    //값에 따라 실행 흐름이 바뀜
+    //witch문은 if문으로도 구현 할 수 있다
+
+    //key 와 value가 일치하는 곳부터 break;를 만나는 곳 까지 실행
+
+    /* ex) switch (key) {
+        case value: //여기서 부터 시작하여
+            
+            break; //여기 까지
+    
+        default: //모든 case문과 일치하는 값이 없으면 여기서 부터 실행
+            break;
+    } */
+
+ //switch문 예제
+ let a = 0;
+
+    // switch-case의
+    //key와 value는 타입까지 비교함
+    switch (a){
+        case 0: // a===0 데이타 뿐 아니라 타입까지 비교한다 변수가 "0" 이면 false여서 아무것도 출력이 안됨
+            console.log("a는 0"); 
+            break;
+            case 1: //a===1
+                console.log("a는 1");
+                break;
+    }
+
+//반복문 (loop) : while , for
+//while
+console.log("ex1");
+    while (/*조건*/false){
+        //조건이 true이면 code block 실행
+        //다시 조건 확인
+        //조건이 false이면 다음 실행 흐름으로 넘어감 (log(4)로 넘어감)
+        //code block
+    console.log("ex2");
+    console.log("ex3");
+    }
+    console.log("ex4");
+//ex)while 예제
+let b = 1;//
+    while (b < 6){//
+        console.log(b); //1~5
+        b++;
+    }
+//do while : 코드블럭이 한번은 꼭 실행됨
+console.log("예1");
+    do {
+        console.log("예2");
+    }while(false)  //while이 false지만 한번정도 출력하고 싶다 할떄 쓰는 코드 do whlie 코드 한번 보고 false면 한번 출력하고 log(5)로
+    console.log("예3"); //하지만 while이 true인 경우는 log(3)이 무한 출력
+
+//for : 반복문
+//(초기화코드; 조건; 변경코드)
+for(let c = 0; c < 5; c++){
+    console.log("c",c);
+} //while for문 잘선택해서 사용 계속 사용하다 보면 맞는게 있음
+// 5~1출력
+for(let d = 5; d > 0; d--){
+    console.log("d",d);
+}
+
+//variable scope 변수의 scope
+//let , const 의 scope는 선언된 코드블럭내
+//---> 즉, 코드 블럭 내에서만 선언 가능
+let e = 5;//코드블럭 내에 있지 않지만 선언때 선언된 저블록 안에 사용 가능함
+if(true){
+    let f = 10;//f는 코드블럭 내에서만 사용 가능
+    console.log("e",e);
+    console.log("f",f);
+}
+    console.log("e",e); //e 는 출력이 됨
+    console.log("f",f);//f는 코드블럭 안에서 생성했기 
+            //때문에 출력안됨    
+            //(생성된 블록 안에서만 사용 가능하기 때문)
+
+// break
+console.log("이전 명령문들...");
+    for(let i = 0; i < 5; i++){
+        console.log(i);
+
+        //break; 반복을 끝내는 명령문
+        break;
+    }
+    console.log("다음 명령문들...");          
+    </script>
+</body>
+</html>

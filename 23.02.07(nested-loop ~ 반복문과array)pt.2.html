@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    </style>
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    //nested-loop
+    console.log("이전 코드들...");
+    for (let j = 0; j <5; j++){ //j는 0으로 시작
+        console.log("j", j);
+        for(let i = 0; i < 5; i++){ // i가 1,2,3,4 실행되고 5가 되려고 할때 <5에 걸리니 
+        console.log("i",i);        //j가 1이 올라감 그것의 연속 j가 <5될때 까지 반복j가 1이 올라감 그것의 연속
+        }                       // j가 <5될때 까지 반복j가 1이 올라감 그것의 연속 j가 <5될때 까지 반복
+    }
+    console.log("다음 코드들...");
+//continue : 한번의 반복(iteration)을 건너뜀
+    console.log("이전 코드들...");
+
+    for(let i = 0; i < 5; i++){
+        console.log(i);
+
+        continue; //컨티뉴 있으면 아래 log는 출력 안됨
+
+        console.log("코드블럭내 다음 코드들");//코드블럭 내에 다른코드들이 남아있다면?
+    }
+
+// 반복문과 array 
+    let a = "java";
+    let b = "html";
+    let c = "css";
+
+    console.log(a);
+    console.log(b);  // 일일이 이렇게 let 입력해서 보다 어디다
+    console.log(c); //넣어놓고 꺼내 쓰고싶다? ->array
+
+// array : 여러값을 저장한 자료형
+    console.log("array 사용***********");
+    let d = ["java", "css", "html"];
+
+    for (let i = 0; i < d.length; i++){
+        console.log(d[i]);
+    }//반복문은 array와 궁합이 잘맞음
+
+    //여러 값을 타입 구분없이 가질수 있음
+    let e = [3, "css", true, 3.14, null, undefined];
+    
+    //빈배열 도 생성 가능
+    let f = [];
+
+    //코드가 길면 각 값 앞에서 새로운 줄 입력
+    let g =["javascript",
+            "html은 페이지의 구조를 나타낸다", 
+            "css는 html요소를 꾸미는 코드다."
+            ];
+
+        //배열 내의 값은 index를 통해서 접근 가능
+        //배열의 index는 0부터 시작
+        let h = ["java", "css", "js", "jquery"];
+    console.log(h);
+    console.log(h[0]); //0번을 출력하고 싶을때 해당 변수 할당에 대괄호 번호 ->h[n]
+    console.log(h[1]);//css
+    console.log(h[2]);
+    console.log(h[3]);
+
+    console.log(h[4]);// 없는 index 사용 했다? undefined가 출력됨 의도한거면 상관X 
+                    //하지만 아니라면 수정해주면 된다
+    
+    let i = h[0];
+    console.log(i);
+    console.log(h[0]);
+
+    h[0] = "spring";// a의 값을 수정해 주소싶다? java->spring
+    console.log(h[0]); //순서대로 출력돼서 spring나옴 맨위에 출력은 자바
+
+  
+//length의 사용
+    let j = [
+        "spring",
+        "css",
+        "html",
+        "vue",
+        //"react"
+    ]
+    console.log(j[0]);
+    console.log(j[1]);
+    console.log(j[2]);
+    console.log(j[3]);
+    console.log(j[4]);
+    //이렇게 일일히 타이핑하는거 보다 반복문이 더 편하지 않을까?
+    
+    console.log("반복문 사용");
+    for(let i =0; i < 5; i++){
+        console.log(j[i]);
+    }// 하지만 시간이 지나서 a변수 데이터가 바꼈다면? a변수 인덱스 4개로줄면
+    //i<5 하면 마지막은 undefined가 나옴
+
+    //배열의 길이(아이템의 갯수)
+    console.log(j.length);//length 속성이 갖고있는 최대길이(갯수)
+    
+    console.log("length 사용해서 for문 작성");
+    for(let i = 0; i < j.length; i++){
+        console.log(j[i]);
+    }//갯수가 늘던 줄던 length로 모두다 출력 가능
+    </script>
+</body>
+</html>
